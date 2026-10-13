@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 
 import Navbar from "@/components/navigation/Navbar";
+import AuroraOrbs from "@/components/ui/AuroraOrbs";
+import CardSpotlight from "@/components/ui/CardSpotlight";
 import RevealObserver from "@/components/ui/RevealObserver";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import { buildJsonLd, buildMetadata } from "@/lib/seo";
@@ -34,12 +36,14 @@ export default function RootLayout({
           Skip to content
         </a>
 
+        <AuroraOrbs />
         <ScrollProgress />
         <Navbar />
 
         <main id="main">{children}</main>
 
         <RevealObserver />
+        <CardSpotlight />
       </body>
     </html>
   );

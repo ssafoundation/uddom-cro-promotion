@@ -1,5 +1,3 @@
-import FloatingDashboard from "@/components/visuals/FloatingDashboard";
-import PerspectivePanel from "@/components/visuals/PerspectivePanel";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { analyticsMetrics, modulePerformance } from "@/data/features";
 
@@ -17,25 +15,27 @@ export default function AnalyticsSection() {
           lead="See how each module performed across the funnel — impressions, clicks, add to cart, purchases and attributed revenue — in one place."
         />
 
-        <p className="exampleTag" style={{ marginBottom: 18 }}>
+        <p className="exampleTag exampleTag--mb">
           Example data for illustration
         </p>
 
         <div className="reveal" data-reveal>
-          <PerspectivePanel angle="flat">
-            <FloatingDashboard
-              title="uddom · analytics"
-              kpis={analyticsMetrics.slice(0, 3).map((m) => ({
-                label: m.label,
-                value: m.value,
-                delta: m.delta,
-              }))}
-              bars={[38, 46, 52, 61, 58, 70, 66, 78, 74, 86, 90, 96]}
+          <figure className="analyticsArt">
+            <img
+              src="/images/analytics-dashboard.webp"
+              alt="Uddom analytics dashboard — impressions, clicks, add-to-cart, purchases and attributed revenue with module performance bars"
+              width={1707}
+              height={813}
+              loading="lazy"
+              decoding="async"
             />
-          </PerspectivePanel>
+            <figcaption className="shotFrame__caption">
+              Illustrative dashboard render — your real metrics, module performance and attribution live inside the app.
+            </figcaption>
+          </figure>
         </div>
 
-        <div className="dashGrid" style={{ marginTop: 18 }}>
+        <div className="dashGrid dashGrid--mt">
           {analyticsMetrics.slice(3).map((m, i) => (
             <div
               className="card reveal"
@@ -44,11 +44,11 @@ export default function AnalyticsSection() {
               data-delay={String(i + 1)}
             >
               <p className="kpi__label">{m.label}</p>
-              <p className="kpi__value" style={{ color: "var(--foreground)" }}>
+              <p className="kpi__value kpi__value--fg">
                 {m.value}
               </p>
               {m.delta ? (
-                <span className="accentText small" style={{ fontWeight: 700 }}>
+                <span className="accentText small accentText--bold">
                   {m.delta}
                 </span>
               ) : null}
@@ -57,10 +57,10 @@ export default function AnalyticsSection() {
 
           <div className="card reveal" data-reveal data-delay="4">
             <p className="kpi__label">Module performance</p>
-            <div className="barRow" style={{ marginTop: 12 }}>
+            <div className="barRow barRow--mt">
               {modulePerformance.map((r) => (
                 <div className="barRow__line" key={r.module}>
-                  <span style={{ minWidth: 118 }}>{r.module}</span>
+                  <span className="barRow__module">{r.module}</span>
                   <span className="barRow__track">
                     <span
                       className={["barRow__fill", r.amber ? "barRow__fill--amber" : ""]
@@ -69,14 +69,14 @@ export default function AnalyticsSection() {
                       style={{ width: `${r.share}%` }}
                     />
                   </span>
-                  <span style={{ minWidth: 40, textAlign: "right" }}>{r.ctr}%</span>
+                  <span className="barRow__ctr">{r.ctr}%</span>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        <aside className="priceNote" style={{ marginTop: 20 }}>
+        <aside className="priceNote">
           <strong>How Uddom reports:</strong> metrics are shown for the modules that
           support them. Where a metric has no data source, Uddom shows it as
           &ldquo;not measured&rdquo; rather than as a misleading zero, and attribution

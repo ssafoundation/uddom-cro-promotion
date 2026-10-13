@@ -172,73 +172,90 @@ export type ScreenshotKey =
   | "subscriptions";
 
 export type ScreenshotEntry = {
-  /** Expected file inside /public/screenshots. */
+  /** File inside /public/screenshots. */
   file: string;
-  /** Placeholder label shown until the real image is dropped in. */
-  label: string;
-  /** Optional caption / alt text. */
+  /** Alt text / caption subject. */
   alt: string;
+  /** True pixel size, so the layout reserves the right space. */
+  width: number;
+  height: number;
+  /** Caption shown under the image. */
+  caption?: string;
+  /** false keeps the labelled placeholder instead of the image. */
+  ready: boolean;
   /** Recommended aspect ratio for the placeholder frame. */
   ratio: string;
 };
 
 /**
- * Central screenshot configuration. Drop the real image into
- * /public/screenshots with the exact file name below and set `ready: true`
- * on that entry (or leave `ready` false to keep the labelled placeholder).
- * No component code needs to change.
+ * Central screenshot configuration.
+ *
+ * Every image below is the merchant's own in-app capture, copied out of the
+ * user documentation (`Uddom-User-Docs`) into /public/screenshots and converted
+ * to WebP. Real product UI only — never stock or invented imagery.
  */
-export const screenshots: Record<
-  ScreenshotKey,
-  ScreenshotEntry & { ready: boolean }
-> = {
+export const screenshots: Record<ScreenshotKey, ScreenshotEntry> = {
   dashboard: {
     file: "dashboard.webp",
-    label: "Product screenshot placeholder",
-    alt: "Uddom dashboard",
+    alt: "The Uddom dashboard, showing setup progress, store health and the headline metrics.",
+    width: 1600,
+    height: 1029,
+    caption: "The dashboard: setup progress, store health and the headline numbers.",
+    ready: true,
     ratio: "16 / 10",
-    ready: false,
   },
   cro: {
-    file: "cro.webp",
-    label: "Product screenshot placeholder",
-    alt: "Uddom CRO module grid",
+    file: "cro-modules.webp",
+    alt: "The CRO module grid in the Uddom app, with each module and its plan.",
+    width: 1600,
+    height: 1406,
+    caption: "The CRO module grid — every module in one place.",
+    ready: true,
     ratio: "16 / 10",
-    ready: false,
   },
   offers: {
-    file: "offers.webp",
-    label: "Product screenshot placeholder",
-    alt: "Uddom offer builder",
+    file: "offer-builder.webp",
+    alt: "Building an offer in the Uddom offer builder.",
+    width: 1600,
+    height: 1500,
+    caption: "The offer builder: type, products, rules and reward.",
+    ready: true,
     ratio: "16 / 10",
-    ready: false,
   },
   analytics: {
-    file: "analytics.webp",
-    label: "Product screenshot placeholder",
-    alt: "Uddom analytics",
+    file: "analytics-overview.webp",
+    alt: "The Insights overview in the Uddom app.",
+    width: 1359,
+    height: 546,
+    caption: "Insights: what the store did over the period you choose.",
+    ready: true,
     ratio: "16 / 10",
-    ready: false,
   },
   "ab-testing": {
-    file: "ab-testing.webp",
-    label: "Product screenshot placeholder",
-    alt: "Uddom A/B testing",
+    file: "ab-testing-details.webp",
+    alt: "A single A/B test and how each of its variants performed in the Uddom app.",
+    width: 1319,
+    height: 654,
+    caption: "One experiment, with its variants reported side by side.",
+    ready: true,
     ratio: "16 / 10",
-    ready: false,
   },
   email: {
-    file: "email.webp",
-    label: "Product screenshot placeholder",
-    alt: "Uddom email marketing",
+    file: "email-overview.webp",
+    alt: "The Email Marketing overview in the Uddom app.",
+    width: 1081,
+    height: 879,
+    caption: "Email marketing: lists, templates and sending.",
+    ready: true,
     ratio: "16 / 10",
-    ready: false,
   },
   subscriptions: {
-    file: "subscriptions.webp",
-    label: "Product screenshot placeholder",
-    alt: "Uddom subscriptions",
+    file: "subscriptions-list.webp",
+    alt: "The subscriptions list showing the contracts Shopify created, in the Uddom app.",
+    width: 1475,
+    height: 771,
+    caption: "Subscriptions: the contracts Shopify builds from your selling plans.",
+    ready: true,
     ratio: "16 / 10",
-    ready: false,
   },
 };

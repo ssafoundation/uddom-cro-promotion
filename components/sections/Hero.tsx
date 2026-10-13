@@ -1,5 +1,5 @@
-import Image from "next/image";
-
+import BrandFigure from "@/components/ui/BrandFigure";
+import CountUp from "@/components/ui/CountUp";
 import PerspectivePanel from "@/components/visuals/PerspectivePanel";
 import { resolveInstallHref, site } from "@/data/site";
 
@@ -16,9 +16,9 @@ export default function Hero() {
   const installHref = resolveInstallHref(site.installUrl, site.installFallbackAnchor);
 
   const stats = [
-    { value: "12", label: "CRO modules" },
-    { value: "8", label: "Offer types" },
-    { value: "6", label: "Core metrics" },
+    { to: 12, label: "CRO modules" },
+    { to: 8, label: "Offer types" },
+    { to: 6, label: "Core metrics" },
   ];
 
   return (
@@ -59,7 +59,9 @@ export default function Hero() {
           <div className="hero__stats reveal" data-reveal data-delay="4">
             {stats.map((s) => (
               <div className="heroStat" key={s.label}>
-                <p className="heroStat__value">{s.value}</p>
+                <p className="heroStat__value">
+                  <CountUp to={s.to} />
+                </p>
                 <p className="heroStat__label">{s.label}</p>
               </div>
             ))}
@@ -71,21 +73,15 @@ export default function Hero() {
               rotated in CSS — only floated. Rotating a full-width block also
               overflowed the viewport on wide screens. */}
           <PerspectivePanel angle="none" className="float">
-            <figure className="heroShot">
-              <div className="heroShot__frame">
-                <Image
-                  src="/images/hero-dashboard.webp"
-                  alt="The Uddom dashboard showing revenue, conversion, orders and average order value, with conversion, offers, analytics, A/B testing, upsell and email cards floating around it."
-                  width={1774}
-                  height={887}
-                  priority
-                  sizes="(max-width: 1180px) 100vw, 720px"
-                />
-              </div>
-              <figcaption className="heroShot__caption">
-                Illustrative product preview — figures shown are example data.
-              </figcaption>
-            </figure>
+            <BrandFigure
+              src="/images/hero-dashboard.webp"
+              width={1774}
+              height={887}
+              priority
+              sizes="(max-width: 980px) 100vw, 720px"
+              alt="The Uddom dashboard showing revenue, conversion, orders and average order value, with conversion, offers, analytics, A/B testing, upsell and email cards floating around it."
+              caption="Illustrative product preview — figures shown are example data."
+            />
           </PerspectivePanel>
 
           <div className="grid-floor" aria-hidden="true" />

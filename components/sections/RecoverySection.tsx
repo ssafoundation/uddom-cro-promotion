@@ -32,7 +32,7 @@ export default function RecoverySection() {
           ))}
         </ol>
 
-        <p className="small" style={{ color: "var(--faint)" }}>
+        <p className="small small--faint">
           Automatic recovery runs on the schedule you configure; you can also send a
           recovery email manually from the abandoned checkouts list.
         </p>

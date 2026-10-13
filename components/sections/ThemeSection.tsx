@@ -1,6 +1,13 @@
 import SectionHeading from "@/components/ui/SectionHeading";
 import { themeFrames } from "@/data/features";
 
+const themeImages = [
+  { src: "/images/theme-integration.webp", alt: "Secure theme integration: code editor connected to a storefront with a green shield" },
+  { src: "/images/theme-plugin-hub.webp", alt: "Theme plugin hub: storefront connected via puzzle piece to product, bundle, cart and discount modules" },
+  { src: "/images/theme-builder.webp", alt: "Theme builder dashboard with toggles for images, calendar, 3D, links and cart" },
+  { src: "/images/theme-product-page.webp", alt: "Minimal product page with colour swatches, size options and add-to-cart" },
+];
+
 /**
  * Theme compatibility. Deliberately does not claim 100% compatibility with
  * every custom theme — it explains the architecture and the one known
@@ -9,7 +16,7 @@ import { themeFrames } from "@/data/features";
 export default function ThemeSection() {
   return (
     <section
-      className="section section--alt"
+      className="section section--light"
       id="themes"
       aria-labelledby="themes-title"
     >
@@ -20,32 +27,33 @@ export default function ThemeSection() {
           lead="Uddom is designed to work across Shopify storefronts without depending on a single theme's implementation — no theme-specific markup is required."
         />
 
-        <div className="themeFrames">
-          {themeFrames.map((frame, i) => (
-            <article
-              className="themeFrame reveal"
-              key={frame.name}
+        <div className="themeGrid">
+          {themeImages.map((img, i) => (
+            <figure
+              className="themeCard reveal"
+              key={img.src}
               data-reveal
               data-delay={String((i % 4) + 1)}
             >
-              <div className="themeFrame__bar" aria-hidden="true">
-                <span />
-                <span />
-                <span />
+              <div className="themeCard__imageWrap">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  width={1200}
+                  height={1200}
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <div className="themeFrame__body" aria-hidden="true">
-                <div className="themeFrame__block" style={{ width: "70%" }} />
-                <div className="themeFrame__block themeFrame__block--accent" style={{ width: "45%" }} />
-                <div className="themeFrame__block" style={{ width: "86%" }} />
-                <div className="themeFrame__block" style={{ width: "60%" }} />
-              </div>
-              <p className="themeFrame__name">{frame.name}</p>
-              <p className="themeFrame__note">{frame.note}</p>
-            </article>
+              <figcaption className="themeCard__caption">
+                {themeFrames[i].name}
+                <span className="themeCard__note"> — {themeFrames[i].note}</span>
+              </figcaption>
+            </figure>
           ))}
         </div>
 
-        <div className="grid2" style={{ marginTop: 24 }}>
+        <div className="grid2 grid2--mt-lg">
           <div className="priceNote reveal" data-reveal>
             <strong>How it works:</strong> Uddom renders through a Shopify theme app
             extension and uses a theme-aware integration layer that fails safe. If a

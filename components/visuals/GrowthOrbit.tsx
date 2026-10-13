@@ -1,13 +1,19 @@
+import BrandLogo from "@/components/ui/BrandLogo";
+
 type Props = {
   items: string[];
-  center?: string;
 };
 
 /**
- * Growth orbit: the Uddom mark at the centre with feature nodes arranged on a
- * circle, connected by spokes. Pure CSS 3D (rotateX on the rings) — no WebGL.
+ * Growth orbit: the Uddom brand logo at the centre with feature nodes arranged on
+ * a circle, connected by spokes. Pure CSS (rotateX on the rings) — no WebGL.
+ *
+ * The centre is the real supplied logo (`BrandLogo`, the mark variant). That
+ * asset has a white background, so it sits on a white plate to keep the brand
+ * colours exact. The orbit itself carries the accessible name, so the logo is
+ * decorative here.
  */
-export default function GrowthOrbit({ items, center = "UDDOM" }: Props) {
+export default function GrowthOrbit({ items }: Props) {
   const radius = 42; // percent of the container
 
   return (
@@ -32,7 +38,9 @@ export default function GrowthOrbit({ items, center = "UDDOM" }: Props) {
         })}
       </div>
 
-      <div className="orbit__center">{center}</div>
+      <div className="orbit__center">
+        <BrandLogo variant="mark" sizes="200px" />
+      </div>
     </div>
   );
 }

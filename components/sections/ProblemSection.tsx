@@ -1,9 +1,11 @@
-import { Fragment } from "react";
-
+import BrandFigure from "@/components/ui/BrandFigure";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { journey, problemItems } from "@/data/features";
+import { problemItems } from "@/data/features";
 
-/** Problem section: the leaky journey without Uddom, and the guided one with it. */
+/**
+ * Problem section: the common leaks merchants hit, next to the supplied
+ * journey render (a visitor who exits vs. an Uddom-assisted path to purchase).
+ */
 export default function ProblemSection() {
   return (
     <section className="section" id="problem" aria-labelledby="problem-title">
@@ -31,38 +33,15 @@ export default function ProblemSection() {
             ))}
           </ul>
 
-          <div className="journey reveal" data-reveal data-delay="1">
-            <div className="journey__row">
-              <p className="journey__label">Without Uddom</p>
-              <div className="journey__steps">
-                {journey.without.map((step, i) => (
-                  <Fragment key={step}>
-                    <span className="journey__step">{step}</span>
-                    {i < journey.without.length - 1 ? (
-                      <span className="journey__arrow" aria-hidden="true">
-                        →
-                      </span>
-                    ) : null}
-                  </Fragment>
-                ))}
-              </div>
-            </div>
-
-            <div className="journey__row journey__row--good">
-              <p className="journey__label">With Uddom</p>
-              <div className="journey__steps">
-                {journey.withUddom.map((step, i) => (
-                  <Fragment key={step}>
-                    <span className="journey__step">{step}</span>
-                    {i < journey.withUddom.length - 1 ? (
-                      <span className="journey__arrow" aria-hidden="true">
-                        →
-                      </span>
-                    ) : null}
-                  </Fragment>
-                ))}
-              </div>
-            </div>
+          <div className="reveal" data-reveal data-delay="1">
+            <BrandFigure
+              src="/images/journey.webp"
+              width={1774}
+              height={887}
+              sizes="(max-width: 980px) 100vw, 760px"
+              alt="Two customer journeys: on the left a visitor reaches a product page and exits; on the right an Uddom-assisted path from visitor to engage, offer, confidence and purchase."
+              caption="Illustrative journey — example products."
+            />
           </div>
         </div>
       </div>

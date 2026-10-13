@@ -10,12 +10,12 @@ export default function FinalCtaSection() {
       <div className="finalCta__bg" aria-hidden="true" />
       <div className="container">
         <div className="finalCta__mark float">
-          <BrandLogo sizes="96px" />
+          <BrandLogo variant="lockup" sizes="108px" />
         </div>
         <h2 className="h2 reveal" id="final-title" data-reveal>
           Your store has more potential.
         </h2>
-        <p className="lead reveal" data-reveal data-delay="1" style={{ marginTop: 18 }}>
+        <p className="lead lead--mt reveal" data-reveal data-delay="1">
           Turn more traffic into customers with one Shopify growth platform.
         </p>
         <div className="finalCta__ctas reveal" data-reveal data-delay="2">

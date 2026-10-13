@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 import { platformMenu, primaryNav } from "@/data/navigation";
 import { resolveInstallHref, site } from "@/data/site";
 import BrandLogo from "@/components/ui/BrandLogo";
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<string>("");
@@ -38,7 +40,7 @@ export default function Navbar() {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  /* Active section highlight. */
+  /* Active section highlight — home-page sections only. */
   useEffect(() => {
     const ids = ["platform", "cro", "offers", "analytics", "ab-testing", "email", "subscriptions", "pricing", "faq", "how-it-works"];
     const nodes = ids
@@ -49,7 +51,7 @@ export default function Navbar() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) setActive(`#${entry.target.id}`);
+          if (entry.isIntersecting) setActive(`/#${entry.target.id}`);
         });
       },
       { rootMargin: "-45% 0px -50% 0px" },
@@ -61,17 +63,14 @@ export default function Navbar() {
   return (
     <header className={["nav", scrolled ? "nav--scrolled" : ""].join(" ").trim()}>
       <div className="container container--wide nav__inner">
-        <a className="nav__brand" href="#top" aria-label={`${site.name} home`}>
-          <span className="nav__mark">
-            <BrandLogo priority sizes="32px" />
-          </span>
-          <span className="brand__wordmark">{site.name}</span>
+        <a className="nav__brand" href="/" aria-label={`${site.name} home`}>
+          <BrandLogo variant="lockup" priority sizes="110px" className="nav__logo" />
         </a>
 
         <nav aria-label="Primary">
           <ul className="nav__links">
             <li className="nav__item">
-              <a className="nav__link" href="#platform">
+              <a className="nav__link" href="/#platform">
                 Platform
                 <span className="nav__caret" aria-hidden="true" />
               </a>
@@ -90,7 +89,19 @@ export default function Navbar() {
             {primaryNav.map((link) => (
               <li className="nav__item" key={link.href}>
                 <a
-                  className={["nav__link", active === link.href ? "nav__link--active" : ""].join(" ").trim()}
+                  className={[
+                    "nav__link",
+                    link.href.includes("#")
+                      ? active === link.href
+                        ? "nav__link--active"
+                        : ""
+                      : pathname === link.href
+                        ? "nav__link--active"
+                        : "",
+                  ]
+                    .filter(Boolean)
+                    .join(" ")
+                    .trim()}
                   href={link.href}
                 >
                   {link.label}

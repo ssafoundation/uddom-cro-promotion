@@ -31,18 +31,6 @@ export const problemItems: string[] = [
   "Growth tools live in disconnected systems",
 ];
 
-export const journey = {
-  without: ["Visitor", "Product page", "Exit"],
-  withUddom: [
-    "Visitor",
-    "Relevant offer",
-    "Confidence",
-    "Upsell",
-    "Purchase",
-    "Retention",
-  ],
-};
-
 /* -------------------------------------------------------------------------- */
 /* CRO feature grid (12 modules that exist in the app)                         */
 /* -------------------------------------------------------------------------- */

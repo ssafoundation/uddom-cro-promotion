@@ -1,3 +1,4 @@
+import BrandFigure from "@/components/ui/BrandFigure";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { croFeatures, type CroFeature } from "@/data/features";
 
@@ -8,7 +9,7 @@ function CroVisual({ visual }: { visual: CroFeature["visual"] }) {
       return (
         <div className="croCard__visual">
           <span className="miniBadge">Only 3 left</span>
-          <p className="miniRow" style={{ marginTop: 12 }}>
+          <p className="miniRow miniRow--mt">
             <span>In stock</span>
             <span>3 units</span>
           </p>
@@ -21,7 +22,7 @@ function CroVisual({ visual }: { visual: CroFeature["visual"] }) {
             <span>Sale ends in</span>
             <span>02:14:38</span>
           </p>
-          <div className="miniProgress" style={{ marginTop: 12 }}>
+          <div className="miniProgress miniProgress--mt">
             <i style={{ width: "68%" }} />
           </div>
         </div>
@@ -56,8 +57,8 @@ function CroVisual({ visual }: { visual: CroFeature["visual"] }) {
     case "reviews":
       return (
         <div className="croCard__visual">
-          <p style={{ color: "#f5b301", fontSize: "0.9rem" }}>★★★★★</p>
-          <p className="miniRow" style={{ marginTop: 8 }}>
+          <p className="stars">★★★★★</p>
+          <p className="miniRow miniRow--mt-sm">
             <span>4.8 average</span>
             <span>126 reviews</span>
           </p>
@@ -70,7 +71,7 @@ function CroVisual({ visual }: { visual: CroFeature["visual"] }) {
             <span>Add $12 more for free shipping</span>
             <span>$38 / $50</span>
           </p>
-          <div className="miniProgress" style={{ marginTop: 10 }}>
+          <div className="miniProgress miniProgress--mt-md">
             <i style={{ width: "76%" }} />
           </div>
         </div>
@@ -78,8 +79,8 @@ function CroVisual({ visual }: { visual: CroFeature["visual"] }) {
     case "exit":
       return (
         <div className="croCard__visual">
-          <p style={{ fontWeight: 700, fontSize: "0.86rem" }}>Wait — don&rsquo;t leave yet</p>
-          <p className="miniRow" style={{ marginTop: 6 }}>
+          <p className="croVisual__title">Wait — don&rsquo;t leave yet</p>
+          <p className="miniRow miniRow--mt-xs">
             <span>Here is 10% off</span>
             <span>Claim</span>
           </p>
@@ -92,7 +93,7 @@ function CroVisual({ visual }: { visual: CroFeature["visual"] }) {
             <span>You may also like</span>
             <span>Add</span>
           </p>
-          <div className="miniProgress" style={{ marginTop: 10 }}>
+          <div className="miniProgress miniProgress--mt-md">
             <i style={{ width: "40%" }} />
           </div>
         </div>
@@ -109,7 +110,7 @@ function CroVisual({ visual }: { visual: CroFeature["visual"] }) {
     case "guarantee":
       return (
         <div className="croCard__visual">
-          <p style={{ fontWeight: 700, fontSize: "0.86rem" }}>
+          <p className="croVisual__title">
             Backed by a 30-day guarantee
           </p>
         </div>
@@ -131,13 +132,24 @@ function CroVisual({ visual }: { visual: CroFeature["visual"] }) {
 /** The 12 CRO modules that render on the storefront. */
 export default function CroSection() {
   return (
-    <section className="section" id="cro" aria-labelledby="cro-title">
+    <section className="section section--light" id="cro" aria-labelledby="cro-title">
       <div className="container">
         <SectionHeading
           eyebrow="Conversion rate optimization"
           title={<span id="cro-title">Optimize every moment before the purchase.</span>}
           lead="Add conversion-focused experiences across the storefront. Each module is a switch in the app and a small, theme-aware widget on the storefront."
         />
+
+        <div className="reveal croShowcase" data-reveal>
+          <BrandFigure
+            src="/images/cro-showcase.webp"
+            width={1774}
+            height={887}
+            sizes="(max-width: 1360px) 100vw, 1360px"
+            alt="A product page with Uddom conversion modules layered on it: reviews, countdown timer, exit-intent offer, cross-sell, free shipping bar, trust badges and a guarantee badge."
+            caption="Illustrative storefront preview — example products and figures."
+          />
+        </div>
 
         <div className="croGrid">
           {croFeatures.map((f, i) => (

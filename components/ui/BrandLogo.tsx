@@ -19,9 +19,9 @@ type Props = {
  * The Uddom brand logo, served through next/image so the browser receives an
  * optimised, correctly sized variant rather than the source artwork.
  *
- * The supplied brand asset has a white background (verified: 8-bit truecolour
- * RGB, no alpha channel), so it is always presented on a white chip/plate to
- * keep the brand colours exact. Swap in a transparent asset to drop the plate.
+ * `lockup` is a transparent RGBA export, so it sits on any background. The
+ * `mark` glyph still has a white background (8-bit truecolour RGB, no alpha)
+ * and is therefore presented on a white chip/plate to keep its colours exact.
  */
 export default function BrandLogo({
   variant = "mark",
@@ -35,8 +35,8 @@ export default function BrandLogo({
       <Image
         src="/images/uddom-logo.webp"
         alt={alt}
-        width={1064}
-        height={1063}
+        width={1200}
+        height={366}
         className={className}
         sizes={sizes}
         priority={priority}

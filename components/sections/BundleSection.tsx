@@ -15,15 +15,15 @@ export default function BundleSection() {
         <div className="reveal" data-reveal>
           <ProductScene
             items={[
-              { name: "Product A" },
-              { name: "Product B" },
-              { name: "Free gift", kind: "gift" },
+              { name: "Leather Tote", image: "/images/products/tote.webp" },
+              { name: "Water Bottle", image: "/images/products/bottle.webp" },
+              { name: "Free gift", kind: "gift", image: "/images/products/gift.webp" },
             ]}
           />
         </div>
 
-        <p className="small" style={{ color: "var(--faint)", marginTop: 16 }}>
-          Abstract product representations — replace with your own product imagery.
+        <p className="small small--faint-mt-md">
+          Illustrative product photography — swap in your own product shots.
         </p>
       </div>
     </section>

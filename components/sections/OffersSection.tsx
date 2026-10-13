@@ -15,7 +15,7 @@ export default function OffersSection() {
 
         <div className="offerGrid">
           <div className="reveal" data-reveal>
-            <ul className="chipRow" style={{ marginBottom: 22 }}>
+            <ul className="chipRow chipRow--mb">
               {offerTypes.map((t) => (
                 <li className="pill" key={t}>
                   {t}
@@ -31,7 +31,7 @@ export default function OffersSection() {
 
           <div className="reveal" data-reveal data-delay="1">
             <OfferStack tiers={offerTiers} />
-            <p className="small" style={{ color: "var(--faint)", marginTop: 14 }}>
+            <p className="small small--faint-mt">
               Illustrative example — buying three lowers the effective unit price.
             </p>
           </div>

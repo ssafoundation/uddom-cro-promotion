@@ -78,9 +78,9 @@ export default function ShowcaseSection() {
             <p className="shotSide__text">{current.text}</p>
             <div className="shotSide__metrics">
               {current.metrics.map((m) => (
-                <div className="kpi" key={m.label} style={{ background: "var(--surface)", borderColor: "var(--border)" }}>
+                <div className="kpi kpi--surface" key={m.label}>
                   <p className="kpi__label">{m.label}</p>
-                  <p className="kpi__value" style={{ color: "var(--foreground)" }}>
+                  <p className="kpi__value kpi__value--fg">
                     {m.value}
                   </p>
                 </div>

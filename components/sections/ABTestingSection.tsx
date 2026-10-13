@@ -22,7 +22,7 @@ export default function ABTestingSection() {
           lead="Split one module between variants, give each its share of traffic, and see how they performed side by side."
         />
 
-        <p className="exampleTag" style={{ marginBottom: 18 }}>
+        <p className="exampleTag exampleTag--mb">
           Example data for illustration
         </p>
 
@@ -30,17 +30,13 @@ export default function ABTestingSection() {
           <ExperimentFlow variants={abVariants} />
         </div>
 
-        <div className="grid2" style={{ marginTop: 26 }}>
+        <div className="grid2 grid2--mt">
           <ul className="problemList reveal" data-reveal>
             {concepts.map((c) => (
               <li className="problemItem" key={c}>
                 <span
-                  className="problemItem__x"
+                  className="problemItem__x problemItem__x--yes"
                   aria-hidden="true"
-                  style={{
-                    background: "var(--accent-soft)",
-                    color: "var(--accent)",
-                  }}
                 >
                   ✓
                 </span>

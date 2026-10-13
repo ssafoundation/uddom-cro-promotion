@@ -1,20 +1,24 @@
+import ProductGlyph from "@/components/visuals/ProductGlyph";
+
 type Props = {
-  items: { name: string; kind?: "gift" | "product" }[];
+  items: { name: string; kind?: "gift" | "product"; image?: string; glyph?: "tote" | "cap" | "bottle" | "gift" }[];
   unlockLabel?: string;
 };
 
 /**
- * Bundle + free-gift product scene. Abstract product tiles (no copyrighted
- * imagery) arranged with 3D depth, and an "unlocked" bar.
+ * Bundle + free-gift product scene: the products arranged with 3D depth above an
+ * "unlocked" bar. Each tile shows a real product photograph (a free Pexels photo
+ * — see scripts/pexels-pick.py), on a white plate so a light-background photo
+ * reads correctly. The photograph is decorative; the tile's name is the label.
  */
 export default function ProductScene({
   items,
   unlockLabel = "Bundle unlocked",
 }: Props) {
   return (
-    <div className="bundleScene stage">
+    <div className="bundleScene">
       <div className="stage__glow" aria-hidden="true" />
-      <div className="bundleRow persp persp--flat">
+      <div className="bundleRow">
         {items.map((item) => (
           <div
             className={["productTile", item.kind === "gift" ? "productTile--gift" : ""]
@@ -22,7 +26,13 @@ export default function ProductScene({
               .trim()}
             key={item.name}
           >
-            <span className="productTile__glyph" aria-hidden="true" />
+            <span className="productTile__photo">
+              {item.image ? (
+                <img src={item.image} alt="" loading="lazy" decoding="async" />
+              ) : item.glyph ? (
+                <ProductGlyph variant={item.glyph} />
+              ) : null}
+            </span>
             <span className="productTile__name">{item.name}</span>
           </div>
         ))}

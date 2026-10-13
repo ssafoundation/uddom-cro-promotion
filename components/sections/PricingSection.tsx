@@ -1,5 +1,11 @@
 import SectionHeading from "@/components/ui/SectionHeading";
-import { billingCycle, plans, pricingNotes, pricingVerified } from "@/data/pricing";
+import {
+  billingCycle,
+  catalogTotal,
+  plans,
+  pricingNotes,
+  pricingVerified,
+} from "@/data/pricing";
 import { resolveInstallHref, site } from "@/data/site";
 
 /**
@@ -11,7 +17,7 @@ export default function PricingSection() {
   const installHref = resolveInstallHref(site.installUrl, site.installFallbackAnchor);
 
   return (
-    <section className="section" id="pricing" aria-labelledby="pricing-title">
+    <section className="section section--light" id="pricing" aria-labelledby="pricing-title">
       <div className="container">
         <SectionHeading
           eyebrow="Pricing"
@@ -21,8 +27,7 @@ export default function PricingSection() {
         />
 
         <p
-          className="visually-hidden"
-          style={{ textAlign: "center", marginBottom: 18 }}
+          className="visually-hidden visually-hidden--center"
         >
           Billing cycle: {billingCycle}.
         </p>
@@ -57,6 +62,14 @@ export default function PricingSection() {
               </p>
               <p className="priceCard__note">{plan.blurb}</p>
 
+              <p className="priceCard__count">
+                Includes <strong>{plan.includedCount}</strong> of {catalogTotal} modules
+              </p>
+
+              {plan.inherits ? (
+                <p className="priceCard__inherits">Everything in {plan.inherits}, plus:</p>
+              ) : null}
+
               <ul className="priceCard__features">
                 {plan.features.map((f) => (
                   <li className="priceCard__feature" key={f}>
@@ -72,21 +85,21 @@ export default function PricingSection() {
           ))}
         </div>
 
-        <div className="priceNote" style={{ marginTop: 22 }}>
+        <div className="priceNote priceNote--mt-lg">
           {!pricingVerified ? (
-            <p style={{ marginBottom: 10 }}>
+            <p className="priceNote__lead">
               <strong>Pricing is being finalised.</strong> These plans and prices are the
               planned launch pricing. Uddom&rsquo;s billing is not configured yet, so nothing
               here starts a paid subscription today. A free plan is available.
             </p>
           ) : null}
-          <ul>
+          <ul className="priceNote__list">
             {pricingNotes.map((note) => (
-              <li key={note} style={{ marginTop: 6 }}>
+              <li key={note}>
                 • {note}
               </li>
             ))}
-            <li style={{ marginTop: 6 }}>
+            <li>
               • Plans map to module labels (Free, Grow, Convert, Scale) shown on each
               module card in the app.
             </li>

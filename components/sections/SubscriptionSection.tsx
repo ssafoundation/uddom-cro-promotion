@@ -26,11 +26,11 @@ export default function SubscriptionSection() {
               </div>
               <div className="recur__row">
                 <span>Reorder reminder</span>
-                <span style={{ color: "var(--faint)" }}>None</span>
+                <span className="faintText">None</span>
               </div>
               <div className="recur__row">
                 <span>Relationship</span>
-                <span style={{ color: "var(--faint)" }}>Ends at checkout</span>
+                <span className="faintText">Ends at checkout</span>
               </div>
             </div>
           </div>
@@ -54,7 +54,7 @@ export default function SubscriptionSection() {
           </div>
         </div>
 
-        <ul className="chipRow" style={{ marginTop: 22 }}>
+        <ul className="chipRow chipRow--mt">
           {subscriptionPoints.map((p) => (
             <li className="pill" key={p}>
               {p}
@@ -62,7 +62,7 @@ export default function SubscriptionSection() {
           ))}
         </ul>
 
-        <aside className="priceNote" style={{ marginTop: 18 }}>
+        <aside className="priceNote priceNote--mt">
           <strong>How billing works:</strong> subscription plans are Shopify purchase
           options. Recurring billing and payment are handled by Shopify — Uddom does not
           run subscription billing, and it stores no payment data. Uddom shows you a

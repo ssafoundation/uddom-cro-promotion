@@ -25,7 +25,7 @@ export const site = {
   installUrl: "",
 
   /** Where the primary CTA lands until `installUrl` is set. */
-  installFallbackAnchor: "#pricing",
+  installFallbackAnchor: "/#pricing",
 
   seo: {
     title: "Uddom — Shopify Growth Platform",

@@ -15,7 +15,11 @@ type Props = {
 /**
  * Counts up to a number when it scrolls into view. Used only for clearly
  * illustrative demo metrics, never for real customer statistics.
- * Respects prefers-reduced-motion by jumping to the final value.
+ *
+ * The state starts on the real value rather than zero, so the server-rendered
+ * HTML — and the no-JavaScript view — shows the correct number; the count-up
+ * resets to zero only at the moment it is about to animate. Respects
+ * prefers-reduced-motion by leaving the final value in place.
  */
 export default function CountUp({
   to,
@@ -26,7 +30,7 @@ export default function CountUp({
   className,
 }: Props) {
   const ref = useRef<HTMLSpanElement>(null);
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(to);
 
   useEffect(() => {
     const node = ref.current;
@@ -57,6 +61,7 @@ export default function CountUp({
       (entries) => {
         if (entries[0]?.isIntersecting && !started) {
           started = true;
+          setValue(0);
           run();
           observer.disconnect();
         }

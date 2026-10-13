@@ -41,10 +41,12 @@ export default function CroSimulator() {
 
         <div className="croSim">
           <div className="shopPage reveal" data-reveal>
-            <p className="shopPage__crumb">Home / Products / Everyday Tote</p>
-            <div className="shopPage__media">Product image</div>
+            <p className="shopPage__crumb">Home / Products / Leather Tote</p>
+            <div className="shopPage__media">
+              <img src="/images/products/tote.webp" alt="" loading="lazy" decoding="async" />
+            </div>
             <div className="shopPage__row">
-              <h3 className="shopPage__title">Everyday Tote</h3>
+              <h3 className="shopPage__title">Leather Tote</h3>
               <span className="shopPage__price">$58.00</span>
             </div>
             <div className="shopPage__row">
@@ -70,10 +72,10 @@ export default function CroSimulator() {
           </div>
 
           <div className="reveal" data-reveal data-delay="1">
-            <p className="eyebrow" style={{ marginBottom: 14 }}>
+            <p className="eyebrow eyebrow--mb">
               Modules
             </p>
-            <div style={{ display: "grid", gap: 10 }}>
+            <div className="croSim__toggleList">
               {simModules.map((m) => (
                 <button
                   type="button"
@@ -87,7 +89,7 @@ export default function CroSimulator() {
                 </button>
               ))}
             </div>
-            <p className="small" style={{ color: "var(--muted)", marginTop: 14 }}>
+            <p className="small small--muted-mt">
               In the app, each module is switched on and configured individually, and
               several can run together.
             </p>

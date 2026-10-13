@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 /**
  * One global IntersectionObserver that reveals every `[data-reveal]` element.
@@ -9,8 +10,12 @@ import { useEffect } from "react";
  * `className="reveal" data-reveal`. Mounting this once avoids wrapper <div>s
  * that would break grid layouts. If JavaScript is disabled the <noscript>
  * style in the root layout keeps all content visible.
+ *
+ * Re-runs on route change so client-side navigation reveals the new page.
  */
 export default function RevealObserver() {
+  const pathname = usePathname();
+
   useEffect(() => {
     const nodes = Array.from(
       document.querySelectorAll<HTMLElement>("[data-reveal]"),
@@ -37,7 +42,7 @@ export default function RevealObserver() {
 
     nodes.forEach((n) => observer.observe(n));
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
 
   return null;
 }

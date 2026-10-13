@@ -1,15 +1,11 @@
+import BrandFigure from "@/components/ui/BrandFigure";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { ecosystemNodes } from "@/data/features";
 
 /**
- * "One app, many systems": the platform moment. Node positions and spoke
- * angles are computed deterministically so the layout is stable (no random
- * layout, no hydration mismatch).
+ * "One app, many systems" — the platform moment, using the supplied ecosystem
+ * render (the Uddom mark at the centre of the growth systems).
  */
 export default function EcosystemSection() {
-  const radiusX = 38; // percent
-  const radiusY = 34;
-
   return (
     <section className="section" id="ecosystem" aria-labelledby="eco-title">
       <div className="container">
@@ -20,37 +16,16 @@ export default function EcosystemSection() {
           center
         />
 
-        <div className="eco reveal" data-reveal>
-          <div className="eco__nodes" aria-hidden="true">
-            {ecosystemNodes.map((node, i) => {
-              const angle = (i / ecosystemNodes.length) * Math.PI * 2 - Math.PI / 2;
-              const x = 50 + radiusX * Math.cos(angle);
-              const y = 50 + radiusY * Math.sin(angle);
-              const deg = (angle * 180) / Math.PI;
-              return (
-                <span key={node}>
-                  <span
-                    className="eco__spoke"
-                    style={{ transform: `rotate(${deg}deg)` }}
-                  />
-                  <span
-                    className="eco__node"
-                    style={{ left: `${x}%`, top: `${y}%`, transform: "translate(-50%, -50%)" }}
-                  >
-                    {node}
-                  </span>
-                </span>
-              );
-            })}
-          </div>
-          <div className="eco__center">UDDOM</div>
+        <div className="reveal" data-reveal>
+          <BrandFigure
+            src="/images/ecosystem.webp"
+            width={1774}
+            height={887}
+            sizes="(max-width: 1360px) 100vw, 1360px"
+            alt="The Uddom platform at the centre of a connected network of systems: CRO, offers, upsells, analytics, A/B testing, email, recovery and subscriptions."
+            caption="Illustrative platform illustration."
+          />
         </div>
-
-        <ul className="visually-hidden">
-          {ecosystemNodes.map((n) => (
-            <li key={n}>{n}</li>
-          ))}
-        </ul>
       </div>
     </section>
   );

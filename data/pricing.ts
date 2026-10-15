@@ -78,7 +78,7 @@ export const plans: Plan[] = [
   {
     id: "convert",
     name: "Convert",
-    price: "$24.90",
+    price: "$19.90",
     period: "/month",
     blurb: "Offers, upsells, reviews and the reporting that shows what worked.",
     inherits: "Grow",
@@ -90,7 +90,7 @@ export const plans: Plan[] = [
   {
     id: "scale",
     name: "Scale",
-    price: "$49.90",
+    price: "$39.90",
     period: "/month",
     blurb: "Experimentation, email marketing and managed sending for growing stores.",
     inherits: "Convert",

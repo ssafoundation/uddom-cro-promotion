@@ -22,10 +22,10 @@ export default function AnalyticsSection() {
         <div className="reveal" data-reveal>
           <figure className="analyticsArt">
             <img
-              src="/images/analytics-dashboard.webp"
-              alt="Uddom analytics dashboard — impressions, clicks, add-to-cart, purchases and attributed revenue with module performance bars"
-              width={1707}
-              height={813}
+              src="/images/analytics-dashboard-neon-modules.webp"
+              alt="The Uddom CRO dashboard in neon style: revenue, conversion rate, orders and AOV tiles, a total-revenue trend line, a traffic ring and the CRO module row, with low-stock, countdown, recent-sales, free-shipping, A/B testing and cart-upsell cards floating around it."
+              width={1672}
+              height={941}
               loading="lazy"
               decoding="async"
             />

@@ -57,10 +57,6 @@ export const footerColumns: {
       /* The user documentation is a live, public site. */
       { label: "Documentation", href: "https://docs.uddomcro.com/" },
     ],
-    unavailable: [
-      /* Internal and deliberately not indexed, so it is not linked publicly. */
-      { label: "Developer docs", note: "internal" },
-    ],
   },
   {
     title: "Company",

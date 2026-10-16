@@ -18,11 +18,11 @@ export default function EcosystemSection() {
 
         <div className="reveal" data-reveal>
           <BrandFigure
-            src="/images/ecosystem.webp"
-            width={1774}
-            height={887}
+            src="/images/ecosystem-neon.webp"
+            width={1672}
+            height={941}
             sizes="(max-width: 1360px) 100vw, 1360px"
-            alt="The Uddom platform at the centre of a connected network of systems: CRO, offers, upsells, analytics, A/B testing, email, recovery and subscriptions."
+            alt="The Uddom CRO mark on a lit pedestal at the centre of a connected network of neon panels: CRO, offers, upsells, subscriptions, analytics, recovery, email and A/B testing."
             caption="Illustrative platform illustration."
           />
         </div>

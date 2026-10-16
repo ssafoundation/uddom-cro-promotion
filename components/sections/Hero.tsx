@@ -74,12 +74,12 @@ export default function Hero() {
               overflowed the viewport on wide screens. */}
           <PerspectivePanel angle="none" className="float">
             <BrandFigure
-              src="/images/hero-dashboard.webp"
-              width={1774}
-              height={887}
+              src="/images/hero-neon-dashboard.webp"
+              width={1536}
+              height={1024}
               priority
               sizes="(max-width: 980px) 100vw, 720px"
-              alt="The Uddom dashboard showing revenue, conversion, orders and average order value, with conversion, offers, analytics, A/B testing, upsell and email cards floating around it."
+              alt="A neon-lit Uddom dashboard on a lit pedestal, with floating cards for cart, email, experiments and products around it, a rising trend line and a Shopify bag."
               caption="Illustrative product preview — figures shown are example data."
             />
           </PerspectivePanel>

@@ -142,11 +142,11 @@ export default function CroSection() {
 
         <div className="reveal croShowcase" data-reveal>
           <BrandFigure
-            src="/images/cro-showcase.webp"
-            width={1774}
-            height={887}
+            src="/images/cro-showcase-pastel.webp"
+            width={1672}
+            height={941}
             sizes="(max-width: 1360px) 100vw, 1360px"
-            alt="A product page with Uddom conversion modules layered on it: reviews, countdown timer, exit-intent offer, cross-sell, free shipping bar, trust badges and a guarantee badge."
+            alt="A pastel product dashboard with Uddom CRO modules floating around it: low-stock badge, countdown timer, recent-sales popup, free-shipping bar, A/B testing and cart upsell cards."
             caption="Illustrative storefront preview — example products and figures."
           />
         </div>

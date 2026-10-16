@@ -56,11 +56,11 @@
   --panel-border: #e3e8ef;
   --panel-border-strong: #cdd6e2;
 
-  /* Effects */
+  /* Effects — one corner radius across the site (10px), pills stay 999px. */
   --radius-sm: 10px;
-  --radius: 16px;
-  --radius-lg: 24px;
-  --radius-xl: 34px;
+  --radius: 10px;
+  --radius-lg: 10px;
+  --radius-xl: 10px;
   --shadow-sm: 0 1px 2px rgba(3, 6, 12, 0.5);
   --shadow-md: 0 18px 40px -18px rgba(3, 6, 12, 0.85);
   --shadow-lg: 0 40px 90px -30px rgba(3, 6, 12, 0.9);
@@ -709,7 +709,7 @@ p {
   place-items: center;
   width: 42px;
   height: 42px;
-  border-radius: 12px;
+  border-radius: 10px;
   background: var(--accent-soft);
   color: var(--accent);
   margin-bottom: 16px;
@@ -1010,7 +1010,7 @@ p {
   width: 40px;
   height: 40px;
   padding: 6px;
-  border-radius: 12px;
+  border-radius: 10px;
   background: #ffffff;
   flex: 0 0 auto;
   box-shadow: 0 10px 24px -14px rgba(3, 6, 12, 0.9);
@@ -1124,7 +1124,7 @@ p {
   gap: 11px;
   align-items: flex-start;
   padding: 10px 12px;
-  border-radius: 11px;
+  border-radius: 10px;
   transition: background-color 0.2s var(--ease);
 }
 
@@ -1156,7 +1156,7 @@ p {
   display: none;
   width: 42px;
   height: 42px;
-  border-radius: 11px;
+  border-radius: 10px;
   border: 1px solid var(--border-strong);
   background: var(--surface);
   place-items: center;
@@ -1337,7 +1337,7 @@ p {
 /* Each hero fact is a glass chip, so the numbers read as one product rail. */
 .heroStat {
   padding: 15px 16px;
-  border-radius: 15px;
+  border-radius: 10px;
   background: var(--glass);
   border: 1px solid var(--glass-border);
   box-shadow: var(--glass-highlight);
@@ -1362,7 +1362,7 @@ p {
   margin-top: 4px;
 }
 
-/* The supplied brand renders (2:1 dark compositions). */
+/* The supplied brand renders (dark compositions). */
 .brandFigure {
   margin: 0;
 }
@@ -1371,7 +1371,6 @@ p {
   position: relative;
   border-radius: var(--radius-xl);
   overflow: hidden;
-  border: 1px solid var(--border-strong);
   background: #04070a;
   box-shadow:
     var(--shadow-lg),
@@ -1431,7 +1430,7 @@ p {
 
 .kpi {
   padding: 12px;
-  border-radius: 12px;
+  border-radius: 10px;
   background: var(--panel-2);
   border: 1px solid var(--panel-border);
 }
@@ -1468,7 +1467,7 @@ p {
   gap: 7px;
   height: 108px;
   padding: 12px;
-  border-radius: 12px;
+  border-radius: 10px;
   background: var(--panel-2);
   border: 1px solid var(--panel-border);
 }
@@ -1606,7 +1605,7 @@ p {
   gap: 12px;
   align-items: flex-start;
   padding: 15px 17px;
-  border-radius: 14px;
+  border-radius: 10px;
   background: var(--surface);
   border: 1px solid var(--border);
   font-size: 0.95rem;
@@ -1703,7 +1702,7 @@ p {
   align-items: center;
   gap: 10px;
   padding: 14px 16px;
-  border-radius: 14px;
+  border-radius: 10px;
   border: 1px solid var(--border);
   background: var(--surface);
   text-align: left;
@@ -1797,7 +1796,7 @@ p {
   display: grid;
   place-items: center;
   padding: 16px;
-  border-radius: 26px;
+  border-radius: 10px;
   /* The real brand mark sits on a white plate: the supplied asset has a white
      background, so this keeps the brand colours exact. */
   background: #ffffff;
@@ -1837,6 +1836,14 @@ p {
   margin-bottom: clamp(28px, 3.6vw, 52px);
 }
 
+/* This render is a light artwork on a light band, so its frame drops the dark
+   frame's outline and green glow for a soft neutral lift. */
+.croShowcase .brandFigure__frame {
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 18px 40px -30px rgba(21, 11, 47, 0.35);
+}
+
 .croCard {
   position: relative;
   display: flex;
@@ -1873,7 +1880,7 @@ p {
 
 .croCard__visual {
   margin-top: auto;
-  border-radius: 14px;
+  border-radius: 10px;
   background: var(--panel);
   border: 1px solid var(--panel-border);
   padding: 14px;
@@ -1909,7 +1916,7 @@ p {
   align-items: center;
   gap: 9px;
   padding: 8px 11px;
-  border-radius: 12px;
+  border-radius: 10px;
   background: #f1f4f8;
   font-size: 0.78rem;
   color: var(--panel-ink);
@@ -1977,7 +1984,7 @@ p {
   justify-content: space-between;
   gap: 12px;
   padding: 12px 14px;
-  border-radius: 13px;
+  border-radius: 10px;
   border: 1px solid var(--border);
   background: var(--surface);
   font-size: 0.9rem;
@@ -2029,11 +2036,13 @@ p {
 }
 
 .shopPage {
-  border-radius: var(--radius-lg);
-  background: var(--panel);
+  border-radius: 10px;
+  /* A soft off-white surface instead of pure white, so the mock does not glare
+     against the dark band. */
+  background: var(--band);
   color: var(--panel-ink);
-  border: 1px solid var(--panel-border);
-  box-shadow: var(--shadow-panel);
+  border: 0;
+  box-shadow: 0 18px 40px -30px rgba(4, 7, 10, 0.6);
   padding: 18px;
   display: grid;
   gap: 14px;
@@ -2048,7 +2057,7 @@ p {
 
 .shopPage__media {
   height: 190px;
-  border-radius: 14px;
+  border-radius: 10px;
   background: #ffffff;
   border: 1px solid var(--panel-border);
   overflow: hidden;
@@ -2092,7 +2101,7 @@ p {
   align-items: center;
   gap: 10px;
   padding: 10px 12px;
-  border-radius: 12px;
+  border-radius: 10px;
   font-size: 0.83rem;
   font-weight: 620;
   border: 1px solid;
@@ -2155,7 +2164,7 @@ p {
   align-items: center;
   gap: 14px;
   padding: 16px 18px;
-  border-radius: 16px;
+  border-radius: 10px;
   border: 1px solid var(--border);
   background: var(--surface);
   transition:
@@ -2175,7 +2184,7 @@ p {
   place-items: center;
   width: 42px;
   height: 42px;
-  border-radius: 12px;
+  border-radius: 10px;
   background: var(--surface-2);
   font-weight: 740;
   font-size: 1.02rem;
@@ -2225,7 +2234,7 @@ p {
 .productTile {
   position: relative;
   /* aspect-ratio: 1 / 1; */
-  border-radius: 18px;
+  border-radius: 10px;
   display: grid;
   place-items: center;
   text-align: center;
@@ -2254,7 +2263,7 @@ p {
   height: 104px;
   margin-inline: auto;
   margin-bottom: 14px;
-  border-radius: 26px;
+  border-radius: 10px;
   color: var(--accent);
   background: radial-gradient(
     72% 72% at 50% 28%,
@@ -2290,7 +2299,7 @@ p {
   aspect-ratio: 1 / 1;
   padding: 10px;
   margin-bottom: 12px;
-  border-radius: 14px;
+  border-radius: 10px;
   overflow: hidden;
   background: #ffffff;
   border: 1px solid var(--panel-border);
@@ -2331,7 +2340,7 @@ p {
   justify-content: space-between;
   gap: 14px;
   padding: 16px 20px;
-  border-radius: 16px;
+  border-radius: 10px;
   background: linear-gradient(
     100deg,
     rgba(22, 224, 161, 0.16),
@@ -2388,7 +2397,7 @@ p {
 
 .abSource {
   padding: 18px;
-  border-radius: 16px;
+  border-radius: 10px;
   background: var(--surface);
   border: 1px solid var(--border);
   text-align: center;
@@ -2400,7 +2409,7 @@ p {
 
 .abNode {
   padding: 14px;
-  border-radius: 14px;
+  border-radius: 10px;
   background: var(--surface);
   border: 1px solid var(--border);
 }
@@ -2472,7 +2481,7 @@ p {
   align-items: center;
   gap: 14px;
   padding: 15px 18px;
-  border-radius: 16px;
+  border-radius: 10px;
   border: 1px solid var(--border);
   background: rgba(10, 14, 22, 0.86);
   box-shadow: var(--shadow-md);
@@ -2524,7 +2533,7 @@ p {
   align-items: center;
   gap: 12px;
   padding: 12px 14px;
-  border-radius: 12px;
+  border-radius: 10px;
   border: 1px solid var(--border);
   background: var(--surface);
   font-size: 0.88rem;
@@ -2636,7 +2645,7 @@ p {
   align-items: center;
   justify-content: space-between;
   padding: 10px 13px;
-  border-radius: 11px;
+  border-radius: 10px;
   background: var(--surface-2);
   font-size: 0.86rem;
 }
@@ -2658,7 +2667,7 @@ p {
 
 .themeCard {
   margin: 0;
-  border-radius: 12px;
+  border-radius: 10px;
   border: 1px solid var(--border);
   background: #ffffff;
   overflow: hidden;
@@ -2918,7 +2927,7 @@ p {
   place-items: center;
   width: 38px;
   height: 38px;
-  border-radius: 12px;
+  border-radius: 10px;
   background: var(--accent-soft);
   color: var(--accent);
   font-weight: 800;
@@ -3038,7 +3047,7 @@ p {
 .priceNote {
   margin-top: 20px;
   padding: 14px 18px;
-  border-radius: 14px;
+  border-radius: 10px;
   border: 1px dashed var(--border-strong);
   background: var(--surface);
   font-size: 0.85rem;
@@ -3074,7 +3083,7 @@ p {
 }
 
 .faqItem {
-  border-radius: 16px;
+  border-radius: 10px;
   border: 1px solid var(--border);
   background: var(--surface);
   overflow: hidden;
@@ -3215,14 +3224,11 @@ p {
   width: 152px;
   height: 152px;
   margin: 0 auto 32px;
-  border-radius: 36px;
   display: grid;
   place-items: center;
-  padding: 22px;
-  background: #ffffff;
-  box-shadow:
-    0 46px 100px -40px rgba(22, 224, 161, 0.5),
-    var(--shadow-lg);
+  /* The supplied lockup is a transparent export whose lettering is white, so it
+     sits directly on the dark section — a white plate hid the wordmark. */
+  background: transparent;
 }
 
 .finalCta__mark img {
@@ -3285,6 +3291,19 @@ p {
 }
 
 .footer__link:hover {
+  color: var(--foreground);
+}
+
+/* Inline parent-company credit in the bottom bar. `.footer__link` is a block,
+   which broke the phrase into two lines, so this stays inline on one line. */
+.footer__credit {
+  color: var(--accent);
+  font-weight: 600;
+  white-space: nowrap;
+  transition: color 0.2s var(--ease);
+}
+
+.footer__credit:hover {
   color: var(--foreground);
 }
 
@@ -4141,10 +4160,7 @@ body::before {
   margin: 0 auto;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 1px solid rgba(139, 92, 246, 0.25);
-  box-shadow:
-    0 30px 80px -40px rgba(139, 92, 246, 0.5),
-    0 0 0 1px rgba(99, 102, 241, 0.12);
+  box-shadow: 0 30px 80px -40px rgba(139, 92, 246, 0.5);
   background: #0a0820;
 }
 
@@ -4152,6 +4168,10 @@ body::before {
   display: block;
   width: 100%;
   height: auto;
+  /* The render is 3:2; shown at the frame's wider ratio so the block stays as
+     short as the artwork it replaced (the extra height is cropped). */
+  aspect-ratio: 2.1 / 1;
+  object-fit: cover;
 }
 
 .analyticsArt figcaption {

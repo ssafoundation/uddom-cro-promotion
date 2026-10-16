@@ -112,9 +112,6 @@ export default function Navbar() {
         </nav>
 
         <div className="nav__actions">
-          <a className="nav__login" href={installHref}>
-            {site.ctas.login}
-          </a>
           <a className="btn btn--primary" href={installHref}>
             {site.ctas.primary}
           </a>
@@ -167,9 +164,6 @@ export default function Navbar() {
             ))}
           </div>
           <div className="nav__mobileCtas">
-            <a className="btn btn--ghost" href={installHref} onClick={() => setOpen(false)}>
-              {site.ctas.login}
-            </a>
             <a className="btn btn--primary" href={installHref} onClick={() => setOpen(false)}>
               {site.ctas.primary}
             </a>

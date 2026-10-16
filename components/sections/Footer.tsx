@@ -60,7 +60,17 @@ export default function Footer() {
           <span>
             © {year} {site.name}. All rights reserved.
           </span>
-          <span>{site.tagline}</span>
+          <span>
+            A product of{" "}
+            <a
+              className="footer__credit"
+              href="https://akhtarlabs.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Akhtar Labs
+            </a>
+          </span>
         </div>
       </div>
     </footer>

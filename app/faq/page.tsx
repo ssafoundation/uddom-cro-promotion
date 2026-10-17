@@ -5,12 +5,14 @@ import FaqList from "@/components/sections/FaqList";
 import Footer from "@/components/sections/Footer";
 import PageHero from "@/components/ui/PageHero";
 import { resolveInstallHref, site } from "@/data/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/faq",
   title: "FAQ — Uddom",
   description:
     "Answers about Uddom: themes, CRO modules, bundles and free gifts, A/B testing, analytics, abandoned checkout recovery, email sending, subscriptions and plans.",
-};
+});
 
 export default function FaqPage() {
   const installHref = resolveInstallHref(site.installUrl, site.installFallbackAnchor);

@@ -21,6 +21,15 @@ import ShowcaseSection from "@/components/sections/ShowcaseSection";
 import SubscriptionSection from "@/components/sections/SubscriptionSection";
 import ThemeSection from "@/components/sections/ThemeSection";
 import TrustBar from "@/components/sections/TrustBar";
+import type { Metadata } from "next";
+import { site } from "@/data/site";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = pageMetadata({
+  path: "/",
+  title: site.seo.title,
+  description: site.seo.description,
+});
 
 /**
  * The landing page. Section order follows the intended scroll rhythm:

@@ -6,12 +6,14 @@ import PageHero from "@/components/ui/PageHero";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Shot from "@/components/ui/Shot";
 import { resolveInstallHref, site } from "@/data/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/analytics",
   title: "Analytics & Insights — Uddom",
   description:
     "See what actually converts: impressions, clicks, add to cart, purchases and attributed revenue per module — with coverage disclosed honestly and revenue reported net of refunds.",
-};
+});
 
 /** The numbers Uddom records per module. No figures are shown here — only what each one means. */
 const metrics: { name: string; text: string }[] = [

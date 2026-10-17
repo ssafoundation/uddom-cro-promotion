@@ -17,7 +17,7 @@ export default function Footer() {
         <div className="footer__grid">
           <div>
             <a className="nav__brand" href="/" aria-label={`${site.name} home`}>
-              <BrandLogo variant="lockup" sizes="110px" className="nav__logo" />
+              <BrandLogo variant="lockup" sizes="110px" className="nav__logo" alt="Uddom CRO" />
             </a>
             <p className="footer__brandText">
               One Shopify growth platform for CRO, offers, upsells, analytics, A/B testing,

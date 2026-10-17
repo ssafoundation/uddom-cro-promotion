@@ -28,7 +28,7 @@ export default function ProductScene({
           >
             <span className="productTile__photo">
               {item.image ? (
-                <img src={item.image} alt="" loading="lazy" decoding="async" />
+                <img src={item.image} alt={item.name} loading="lazy" decoding="async" />
               ) : item.glyph ? (
                 <ProductGlyph variant={item.glyph} />
               ) : null}

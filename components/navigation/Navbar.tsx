@@ -64,7 +64,7 @@ export default function Navbar() {
     <header className={["nav", scrolled ? "nav--scrolled" : ""].join(" ").trim()}>
       <div className="container container--wide nav__inner">
         <a className="nav__brand" href="/" aria-label={`${site.name} home`}>
-          <BrandLogo variant="lockup" priority sizes="110px" className="nav__logo" />
+          <BrandLogo variant="lockup" priority sizes="110px" className="nav__logo" alt="Uddom" />
         </a>
 
         <nav aria-label="Primary">

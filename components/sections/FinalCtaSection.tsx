@@ -10,7 +10,7 @@ export default function FinalCtaSection() {
       <div className="finalCta__bg" aria-hidden="true" />
       <div className="container">
         <div className="finalCta__mark float">
-          <BrandLogo variant="lockup" sizes="132px" />
+          <BrandLogo variant="lockup" sizes="132px" alt="Uddom CRO" />
         </div>
         <h2 className="h2 reveal" id="final-title" data-reveal>
           Your store has more potential.

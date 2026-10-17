@@ -8,12 +8,14 @@ import PageHero from "@/components/ui/PageHero";
 import Shot from "@/components/ui/Shot";
 import { moduleCategories, modules, modulesInCategory } from "@/data/modules";
 import { resolveInstallHref, site } from "@/data/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/features",
   title: "Features — every Uddom CRO module",
   description:
     "Every conversion module in Uddom, grouped by what it fixes: urgency, social proof, cart recovery, average order value and trust. Each entry shows the plan it belongs to.",
-};
+});
 
 /**
  * The features hub. Groups the shipped CRO modules by the category the Uddom app

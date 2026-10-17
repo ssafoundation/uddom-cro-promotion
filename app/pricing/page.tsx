@@ -6,12 +6,14 @@ import PricingSection from "@/components/sections/PricingSection";
 import PageHero from "@/components/ui/PageHero";
 import Shot from "@/components/ui/Shot";
 import { resolveInstallHref, site } from "@/data/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/pricing",
   title: "Pricing — Uddom",
   description:
     "Uddom plans: start free with trust and scarcity tools, then add offers, analytics, experimentation and email as your store grows. Monthly billing.",
-};
+});
 
 /**
  * The pricing page. The plan cards themselves are the home page's PricingSection,

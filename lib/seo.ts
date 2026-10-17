@@ -51,6 +51,41 @@ export function buildMetadata(): Metadata {
 }
 
 /**
+ * Per-page metadata. The root layout sets `metadataBase` (and nothing else that
+ * is page-specific), so a relative `path` resolves to the page's own canonical
+ * URL and OG url — subpages never inherit the home page's address or title.
+ */
+export function pageMetadata({
+  path,
+  title,
+  description,
+}: {
+  path: string;
+  title: string;
+  description: string;
+}): Metadata {
+  return {
+    title,
+    description,
+    alternates: { canonical: path },
+    openGraph: {
+      type: "website",
+      siteName: site.name,
+      title,
+      description,
+      url: path,
+      images: [OG_IMAGE],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [OG_IMAGE.url],
+    },
+  };
+}
+
+/**
  * Structured data for the product. Deliberately omits aggregateRating and any
  * review count, because no verified ratings exist — inventing them would be
  * false structured data. `publisher` names the company behind the app.

@@ -43,7 +43,7 @@ export default function CroSimulator() {
           <div className="shopPage reveal" data-reveal>
             <p className="shopPage__crumb">Home / Products / Leather Tote</p>
             <div className="shopPage__media">
-              <img src="/images/products/tote.webp" alt="" loading="lazy" decoding="async" />
+              <img src="/images/products/tote.webp" alt="Leather Tote product photo in the simulated storefront" loading="lazy" decoding="async" />
             </div>
             <div className="shopPage__row">
               <h3 className="shopPage__title">Leather Tote</h3>

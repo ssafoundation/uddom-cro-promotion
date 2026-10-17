@@ -8,12 +8,14 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import Shot from "@/components/ui/Shot";
 import { subscriptionPoints } from "@/data/features";
 import { resolveInstallHref, site } from "@/data/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/subscriptions",
   title: "Subscriptions — Uddom",
   description:
     "Create selling plans and subscription purchase options in the Uddom offer builder, and review the contracts Shopify creates from them.",
-};
+});
 
 export default function SubscriptionsPage() {
   const installHref = resolveInstallHref(site.installUrl, site.installFallbackAnchor);

@@ -39,7 +39,7 @@ export default function GrowthOrbit({ items }: Props) {
       </div>
 
       <div className="orbit__center">
-        <BrandLogo variant="mark" sizes="200px" />
+        <BrandLogo variant="mark" sizes="200px" alt="Uddom logo mark" />
       </div>
     </div>
   );

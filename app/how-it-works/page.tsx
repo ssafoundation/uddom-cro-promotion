@@ -7,12 +7,14 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import Shot from "@/components/ui/Shot";
 import { howItWorks, loopSteps } from "@/data/features";
 import { resolveInstallHref, site } from "@/data/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/how-it-works",
   title: "How it works — Uddom",
   description:
     "From install to optimization in four steps: install Uddom, switch on the modules you want, configure them in the app, then measure and improve what converts.",
-};
+});
 
 export default function HowItWorksPage() {
   const installHref = resolveInstallHref(site.installUrl, site.installFallbackAnchor);

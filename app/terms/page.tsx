@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 
 import Footer from "@/components/sections/Footer";
 import PageHero from "@/components/ui/PageHero";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/terms",
   title: "Terms of Service — Uddom",
   description:
     "The terms that govern your use of the Uddom Shopify app and this website.",
-};
+});
 
 /**
  * PLACEHOLDER TERMS.

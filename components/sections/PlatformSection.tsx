@@ -49,7 +49,7 @@ export default function PlatformSection() {
             </div>
 
             <div className="explorer__panel" aria-live="polite">
-              <h3 className="explorer__panelTitle">{active.headline}</h3>
+              <p className="explorer__panelTitle">{active.headline}</p>
               <p className="explorer__panelText">{active.text}</p>
               <ul>
                 {active.bullets.map((b) => (

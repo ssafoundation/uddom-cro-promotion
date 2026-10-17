@@ -5,12 +5,14 @@ import Footer from "@/components/sections/Footer";
 import PageHero from "@/components/ui/PageHero";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { resolveInstallHref, site } from "@/data/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/contact",
   title: "Contact — Uddom",
   description:
     "Get help with Uddom: browse the user documentation, read the FAQ, or email support.",
-};
+});
 
 /**
  * Support routes. `SUPPORT_EMAIL` is the address shown to merchants — update it

@@ -7,12 +7,14 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import Shot from "@/components/ui/Shot";
 import { offerModels, offerStatuses, productSources, rewardTypes } from "@/data/offers";
 import { resolveInstallHref, site } from "@/data/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/offers",
   title: "Offers & discounts — Uddom",
   description:
     "Build automatic discounts in Uddom: quantity breaks, bundles, Mix & Match, spend & reward, free gifts and subscription offers — applied at checkout by Shopify.",
-};
+});
 
 /**
  * The offers page. Every model, reward and product source below is one the app's

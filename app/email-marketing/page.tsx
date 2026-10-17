@@ -7,12 +7,14 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import Shot from "@/components/ui/Shot";
 import { emailCapabilities, recoveryTimeline } from "@/data/features";
 import { resolveInstallHref, site } from "@/data/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/email-marketing",
   title: "Email marketing — Uddom",
   description:
     "Build lists, import contacts with consent, design reusable templates, send product-focused marketing email, and recover abandoned checkouts automatically.",
-};
+});
 
 export default function EmailMarketingPage() {
   const installHref = resolveInstallHref(site.installUrl, site.installFallbackAnchor);

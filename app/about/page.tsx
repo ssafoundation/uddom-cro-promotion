@@ -7,12 +7,14 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import Shot from "@/components/ui/Shot";
 import { compareFragmented, compareUddom, ecosystemNodes, themeFrames } from "@/data/features";
 import { resolveInstallHref, site } from "@/data/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/about",
   title: "About — Uddom",
   description:
     "Why Uddom exists: one Shopify growth platform for CRO, offers, upsells, analytics, A/B testing, email and subscriptions — theme-aware, no code, and honest about what it measures.",
-};
+});
 
 const principles: { title: string; text: string }[] = [
   {

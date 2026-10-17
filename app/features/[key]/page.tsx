@@ -9,6 +9,7 @@ import PlanBadge from "@/components/ui/PlanBadge";
 import Shot from "@/components/ui/Shot";
 import { getModule, moduleCategories, modules, relatedModules } from "@/data/modules";
 import { resolveInstallHref, site } from "@/data/site";
+import { pageMetadata } from "@/lib/seo";
 
 /** Every module page is generated from the catalogue — nothing is hand-written. */
 export const dynamicParams = false;
@@ -27,10 +28,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: "Feature not found — Uddom" };
   }
 
-  return {
+  return pageMetadata({
+    path: `/features/${module.key}`,
     title: `${module.title} — Uddom`,
     description: module.blurb,
-  };
+  });
 }
 
 export default async function ModulePage({ params }: PageProps) {

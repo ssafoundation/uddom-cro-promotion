@@ -11,7 +11,7 @@ export const site = {
   tagline: "Shopify Growth Platform",
   description:
     "Turn more Shopify visitors into customers with CRO, offers, upsells, analytics, A/B testing, email marketing and subscriptions.",
-  url: "", // e.g. "https://uddom.com" — set when the marketing domain is live
+  url: "https://uddomcro.com",
 
   ctas: {
     primary: "Get Started",

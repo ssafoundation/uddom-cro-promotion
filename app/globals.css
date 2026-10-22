@@ -885,11 +885,18 @@ p {
    9. Reveal / scroll animation state
    -------------------------------------------------------------------------- */
 .reveal {
+  transition:
+    opacity 0.55s var(--ease-out),
+    transform 0.55s var(--ease-out),
+    filter 0.55s var(--ease-out);
+}
+
+/* Content is visible by default. The observer marks only the elements that are
+   OFF-SCREEN when JS becomes ready with `reveal-pending`, so nothing on screen
+   ever waits for hydration — the animation is purely a scroll-in effect. */
+.reveal.reveal-pending:not(.reveal--in) {
   opacity: 0;
   transform: translate3d(0, 26px, 0);
-  transition:
-    opacity 0.7s var(--ease-out),
-    transform 0.7s var(--ease-out);
 }
 
 .reveal--in {
@@ -4043,16 +4050,11 @@ body::before {
   opacity: 1;
 }
 
-/* Reveal: a touch of lift, scale and focus as elements arrive. Declared here so
-   it wins over the base `.reveal` above, and `.reveal--in` is repeated after it
-   so the revealed state is the one that applies. */
-.reveal {
+/* Scroll-in lift: only the pending (off-screen) elements move; anything already
+   on screen is revealed instantly by the observer. */
+.reveal.reveal-pending:not(.reveal--in) {
   transform: translate3d(0, 28px, 0) scale(0.985);
   filter: blur(4px);
-  transition:
-    opacity 0.75s var(--ease-out),
-    transform 0.75s var(--ease-out),
-    filter 0.75s var(--ease-out);
 }
 
 .reveal--in {

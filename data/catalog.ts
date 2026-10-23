@@ -49,7 +49,6 @@ export const catalog: CatalogUnit[] = [
   { key: "email_templates", label: "Email templates", kind: "tool", tier: "grow" },
 
   { key: "cart_reservation_timer", label: "Cart reminder", kind: "cro_widget", tier: "convert", href: "/features/cart-reservation-timer" },
-  { key: "review_widget", label: "Reviews (moderation, importers & widget)", kind: "cro_widget", tier: "convert", href: "/features/review-widget" },
   { key: "abandoned_cart_emails", label: "Abandoned Checkout Recovery", kind: "cro_widget", tier: "convert", href: "/features/abandoned-checkout-recovery" },
   { key: "volume_discount", label: "Volume & Bundle Offers", kind: "cro_widget", tier: "convert", href: "/features/volume-bundle-offers" },
   { key: "post_purchase_upsell", label: "Post-purchase upsell", kind: "cro_widget", tier: "convert", href: "/features/post-purchase-upsell" },

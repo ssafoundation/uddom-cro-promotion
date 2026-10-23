@@ -81,11 +81,6 @@ export const croFeatures: CroFeature[] = [
     visual: "viewers",
   },
   {
-    name: "Review Widget",
-    value: "Put star ratings and photo reviews on the product page.",
-    visual: "reviews",
-  },
-  {
     name: "Free Shipping Bar",
     value: "Show how close a shopper is to free shipping, a discount and a gift.",
     visual: "shipping",

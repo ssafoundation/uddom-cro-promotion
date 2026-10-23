@@ -50,7 +50,7 @@ export const symptoms: Symptom[] = [
     id: "trust",
     title: "Shoppers don't trust the store yet.",
     text: "A newer store has no reviews on the page and nothing to reassure a first-time buyer.",
-    modules: ["review-widget", "trust-badge-strip", "guarantee-banner"],
+    modules: ["trust-badge-strip", "guarantee-banner"],
   },
   {
     id: "proof",

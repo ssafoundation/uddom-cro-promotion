@@ -21,7 +21,7 @@ export const faqItems: FaqItem[] = [
   },
   {
     q: "What CRO features are included?",
-    a: "Uddom includes Low Stock Badge, Countdown Timer, Cart Reservation Timer, Recent Sales Popup, Live Viewer Count, Review Widget, Free Shipping Bar, Exit-Intent Offer, Cart Drawer Cross-Sell, Trust Badge Strip, Guarantee Banner and Post-Purchase Upsell.",
+    a: "Uddom includes Low Stock Badge, Countdown Timer, Cart Reservation Timer, Recent Sales Popup, Live Viewer Count, Free Shipping Bar, Exit-Intent Offer, Cart Drawer Cross-Sell, Trust Badge Strip, Guarantee Banner and Post-Purchase Upsell.",
   },
   {
     q: "Can I create bundles and free gifts?",

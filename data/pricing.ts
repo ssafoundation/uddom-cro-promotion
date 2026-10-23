@@ -80,7 +80,7 @@ export const plans: Plan[] = [
     name: "Convert",
     price: "$19.90",
     period: "/month",
-    blurb: "Offers, upsells, reviews and the reporting that shows what worked.",
+    blurb: "Offers, upsells and the reporting that shows what worked.",
     inherits: "Grow",
     features: addedLabels("convert"),
     includedCount: catalogCountForPlan("convert"),
